@@ -1,17 +1,29 @@
-# ProductManagementWithJwtSwagger
-### For Swagger :
-  We will be adding the swagger dependency to the pom.xml file
-  If we now go to swagger url - http://localhost:8080/swagger-ui/index.html we get the security exception 403.(Because we are using jwt)
-  We will whitelist the swagger urls in spring security file such that it is accessible without authentication
-  We will now see the swagger ui .
-  However if we try to get list of Product using the url /list using the swaggerui we get 403 exception(Because we need to get authenticated and authorize).
-  Next we create a class named SwaggerConfig that uses the Spring Framework's @Configuration annotation to define a bean for generating Swagger documentation. We create an OpenAPI object with information about the authentication service, including the title, description. Most importantly in this config we create a security scheme for bearer authentication, specifying the scheme name, type, and bearer format.
-  Create the JWT -
-Hit the url - /login to which we pass the username and password.
-Provide the JWT to swagger for authorization-
-Using the authorize button provide the JWT
+# Product Management with JWT and Swagger
 
-Access list and other url -
-If we now hit the url /list we get back the list of employees.
+## Overview
+
+This project demonstrates how to use JWT authentication with Swagger UI in a Spring Boot application for product management.
+
+## Setup
+
+1. **Add Swagger Dependencies**: Include the necessary Swagger dependencies in your project.
+
+2. **Configure Security**: Update your Spring Security settings to allow access to Swagger endpoints without authentication.
+
+3. **Swagger Configuration**: Create a configuration class to set up Swagger and define the JWT security scheme.
+
+## JWT Authentication
+
+1. **Obtain JWT**: Use the `/login` endpoint with your credentials to receive a JWT.
+
+2. **Authorize in Swagger**: In Swagger UI, click the "Authorize" button and enter your JWT in the format: `Bearer <your_jwt_token>`.
+
+## Accessing the API
+
+- Use the `/list` endpoint to get the product list (authentication required).
+
+## Conclusion
+
+This setup provides secure product management using JWT and comprehensive API documentation through Swagger.
   
   
